@@ -59,6 +59,20 @@ library(gapminder)
 #   (c) Coloque título, subtítulo e nomes nos eixos com labs()
 #   (d) Use theme_minimal()
 #   (e) Salve como "grafico-1-brasil.png" usando ggsave()
+
+library(gapminder)
+library(tidyverse)
+gapminder |> 
+  filter(country == 'Brazil') |> 
+  ggplot(aes(x = year, y = lifeExp)) +
+  theme_light() +
+  geom_point() +
+  geom_line() +
+  labs(title = 'Evolução da Expectativa de Vida no Brasil',
+       subtitle = '1952 - 2007',
+       caption = 'Gapminder Dataset - The World Bank',
+       x = '',
+       y = 'Expectativa de Vida')
 #
 # DEPOIS DE TERMINAR ESTA ANÁLISE:
 #   Painel Git → marca checkbox em analise.R e grafico-1-brasil.png
