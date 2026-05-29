@@ -96,6 +96,18 @@ gapminder |>
 #   (e) Inverta os eixos com coord_flip()
 #   (f) Customize com labs() e theme_minimal()
 #   (g) Salve como "grafico-2-top10-pib.png"
+
+gapminder |> 
+  filter(year == 2007) |> 
+  arrange(desc(gdpPercap)) |> 
+  head(10) |> 
+  ggplot(aes(x = reorder(country, gdpPercap), y = gdpPercap)) +
+  geom_col() +
+  theme_light() +
+  coord_flip()
+  
+
+
 #
 # DEPOIS DE TERMINAR:
 #   Painel Git → marca checkbox dos arquivos modificados/novos
